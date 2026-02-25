@@ -15,7 +15,7 @@ public with sharing class currencyRateExchangeAPI {
                 System.debug(res.getBody());
             }
         }catch(System.CalloutException ex){
-            if(ex.getMessage().startsWith('System.CalloutException:Unauthorized endpoint')){
+            if(ex.getMessage().startsWith('System.CalloutException: Unauthorized endpoint')){
                 System.debug('Add url inside remote site settings');
             }
         }catch(System.Exception ex){
