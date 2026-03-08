@@ -1,3 +1,3 @@
 public class TriggerRecursionHandler {
-    public static Boolean isAccountTriggerExecuted = false;
+    public static Boolean isTriggerExecuted = false;
 }
