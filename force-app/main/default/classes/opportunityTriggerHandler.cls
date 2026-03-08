@@ -18,4 +18,12 @@ public with sharing class opportunityTriggerHandler {
             }
         }
     }
+    public static void calculateDiscountPrice(List<Opportunity> oppList){
+        for(Opportunity opp: oppList){
+            if(opp.Discount__c != null && opp.Amount != null && opp.Discount__c > 0){
+                Decimal discountAmount = (opp.Discount__c * opp.Amount) / 100;
+                opp.Price_After_Discount__c = opp.Amount - discountAmount;
+            }
+        }
+    }
 }

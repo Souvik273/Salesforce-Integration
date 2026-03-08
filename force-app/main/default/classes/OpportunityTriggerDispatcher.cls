@@ -3,12 +3,14 @@ public with sharing class OpportunityTriggerDispatcher {
         switch on opType{
             when BEFORE_INSERT{
                 opportunityTriggerHandler.handleBeforeInsert(Trigger.NEW);
+                opportunityTriggerHandler.calculateDiscountPrice(Trigger.NEW);
             }
             when AFTER_INSERT{
                 //contactTriggerHandler.handleAfterInsert(Trigger.New);
             }
             when BEFORE_UPDATE{
                 //contactTriggerHandler.handleBeforeInsert(Trigger.NEW);
+                opportunityTriggerHandler.calculateDiscountPrice(Trigger.NEW);
             }
             when AFTER_UPDATE{
                 //contactTriggerHandler.handleAfterUpdate(Trigger.New);
