@@ -14,7 +14,7 @@ public with sharing class AccountTriggerHandler {
         }
     }
     public static void handleAfterInsert(List<Account> accList){
-        List<Account> newRecords = [SELECT Id,Name FROM Account WHERE Id IN : accList];
+        List<Account> newRecords = [SELECT Id,Name,ownerId FROM Account WHERE Id IN : accList];
         List<Task> taskList = new List<Task>();
         for(Account acc: newRecords){
             Task taskRecord = new Task();

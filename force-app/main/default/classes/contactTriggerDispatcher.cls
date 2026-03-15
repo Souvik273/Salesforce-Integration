@@ -3,6 +3,7 @@ public with sharing class contactTriggerDispatcher {
         switch on opType{
             when BEFORE_INSERT{
                 contactTriggerHandler.handleBeforeInsert(Trigger.NEW);
+                contactTriggerHandler.handleDuplicateRecordBasedOnEmail(Trigger.NEW);
             }
             when AFTER_INSERT{
                 //contactTriggerHandler.handleAfterInsert(Trigger.New);
@@ -14,7 +15,7 @@ public with sharing class contactTriggerDispatcher {
                 //contactTriggerHandler.handleAfterUpdate(Trigger.New);
             }
             when BEFORE_DELETE{
-                contactTriggerHandler.handleBeforeUpdate(Trigger.New);
+                //contactTriggerHandler.handleBeforeUpdate(Trigger.New);
             }
             when AFTER_DELETE{
                 //contactTriggerHandler.handleAfterInsert();
